@@ -1,0 +1,21 @@
+@font-face { font-family: 'dinar'; src: url( '../fonts/dinar.eot' ); src: url( '../fonts/dinar.eot?#iefix' ) format("eot"), url( '../fonts/dinar.woff' ) format("woff"), url( '../fonts/dinar.ttf' ) format("truetype"); font-style: normal }
+@font-face { font-family: 'yekan'; src: url( '../fonts/yekan.eot' ); src: url( '../fonts/yekan.eot?#iefix' ) format("eot"), url( '../fonts/yekan.woff' ) format("woff"), url( '../fonts/yekan.ttf' ) format("truetype"); font-style: normal }
+@font-face { font-family: 'nazanin'; src: url( '../fonts/nazanin.eot' ); src: url( '../fonts/nazanin.eot?#iefix' ) format("eot"), url( '../fonts/nazanin.woff' ) format("woff"), url( '../fonts/nazanin.ttf' ) format("truetype"); font-style: normal }
+@font-face {
+    font-family: 'iransans';
+    src: url( '../fonts/IRANSansWeb(FaNum).eot' ) format( "eot" ),
+    url( '../fonts/IRANSansWeb(FaNum).woff' ) format( "woff" ),
+    url( '../fonts/IRANSansWeb(FaNum).woff2' ) format( "woff2" ),
+    url( '../fonts/IRANSansWeb(FaNum).ttf' ) format( "truetype" );
+    font-style: normal;
+}
+*,*:before,*:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box }
+*:focus { outline: 0 }
+html, body { margin: 0; padding: 0; font-family: tahoma; line-height: 22px; color: #666; }
+.en { direction: ltr; text-align: left; font-family: sans-serif!important; }
+.dn, .deleted { display: none; }
+.ad { margin: 0!important; direction: rtl; }
+.ad > div { border: 2px dashed transparent; }
+span.plus , span.minus, .ad-info { display: none!important; }
+.ad, .ad * { -webkit-touch-callout:none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+.ad, .ad > div { cursor: pointer; }

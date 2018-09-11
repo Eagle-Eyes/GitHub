@@ -1,0 +1,13 @@
+document.getElementById("pubclerks_1731").innerHTML = "<style type='text/css'>.pc_block a{color: #666!important; margin:0; padding:0;}.pc_block a:hover{color: #222!important;}.pc_block {margin: 0;}.pc_block:hover {margin: 0;background: #ddd;text-decoration: underline !important;}.pc_block_inactive {border: 1px solid #BBB;}.pc_block_inactive:hover {border: 1px solid #999;}</style>";
+
+								var ins = document.createElement('ins');
+								ins.className = 'oneclerks gads_1731';
+								ins.style='display:block; width:300px; height:250px;';
+								ins.setAttribute('data-revive-zoneid', '0');
+								ins.setAttribute('data-revive-id', '5a92998f8535b04ba251e1de1a49283e');
+								document.getElementById('pubclerks_1731').appendChild(ins);
+								var script = document.createElement('script');
+								script.type = 'text/javascript';
+								script.src = '//swift.adclerks.com/www/delivery/asyncjs.php';
+								script.async = true;
+								document.getElementById('pubclerks_1731').appendChild(script);

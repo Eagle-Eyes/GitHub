@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <!-- properties -->
+
+    <!--<property name="JDBC_DRIVER" value="${spring.datasource.driver-class-name:-Empty}"/>-->
+    <!--<property name="JDBC_URL" value="${spring.datasource.url:-Empty}"/>-->
+    <!--<property name="JDBC_USER" value="${spring.datasource.username:-Empty}"/>-->
+    <!--<property name="JDBC_PASSWORD" value="${spring.datasource.password:-Empty}"/>-->
+
+    <property name="LOG_FOLDER" value="logs/"/>
+
+    <property name="JDBC_DRIVER" value="com.mysql.cj.jdbc.Driver"/>
+    <property name="JDBC_URL" value="jdbc:mysql://localhost:3306/app_service?autoReconnect=true&amp;useSSL=false"/>
+    <property name="JDBC_USER" value="app_srv"/>
+    <property name="JDBC_PASSWORD" value="Aa123456"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SAVE-TO-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n
+            </Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FOLDER}/%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="SAVE-TO-DB" class="ch.qos.logback.classic.db.DBAppender">
+        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+
+            <driverClass>${JDBC_DRIVER}</driverClass>
+            <url>${JDBC_URL}</url>
+            <user>${JDBC_USER}</user>
+            <password>${JDBC_PASSWORD}</password>
+
+        </connectionSource>
+    </appender>
+
+    <appender name="FILE_ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="SAVE-TO-FILE"/>
+    </appender>
+
+    <appender name="DB_ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="SAVE-TO-DB"/>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="DB_ASYNC"/>
+        <appender-ref ref="FILE_ASYNC"/>
+    </root>
+
+    <!--<root level="info">-->
+    <!--<appender-ref ref="STDOUT"/>-->
+    <!--</root>-->
+
+    <!--<root level="info">-->
+    <!--<appender-ref ref="FILE_ASYNC"/>-->
+    <!--<appender-ref ref="DB_ASYNC"/>-->
+    <!--</root>-->
+</configuration>

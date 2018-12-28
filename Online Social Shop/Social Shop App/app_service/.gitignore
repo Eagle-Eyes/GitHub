@@ -1,0 +1,9 @@
+#Ignore list#
+*.class
+.idea/*
+/target/
+logs/*
+*.iml
+*.log
+*.jar
+*.war

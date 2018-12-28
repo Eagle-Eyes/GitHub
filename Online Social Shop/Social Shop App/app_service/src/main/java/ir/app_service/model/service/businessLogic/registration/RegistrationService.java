@@ -1,9 +1,9 @@
 package ir.app_service.model.service.businessLogic.registration;
 
+import ir.app_service.configuration.constant.Constants;
 import ir.app_service.model.entity.Account;
 import ir.app_service.model.entity.NaturalPerson;
 import ir.app_service.model.entity.Role;
-import ir.app_service.configuration.constant.Constants;
 import ir.app_service.model.repository.RoleRepository;
 import ir.app_service.model.service.administration.AdministrationService;
 import org.springframework.stereotype.Service;

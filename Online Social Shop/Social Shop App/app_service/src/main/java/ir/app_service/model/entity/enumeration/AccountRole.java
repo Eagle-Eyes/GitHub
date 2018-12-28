@@ -7,6 +7,7 @@ public enum AccountRole {
     OBSERVER,
     SUPERVISOR,
     CHIEF_SUPERVISOR,
-    ADMINISTRATOR
+    ADMINISTRATOR,
+    GOD
 
 }

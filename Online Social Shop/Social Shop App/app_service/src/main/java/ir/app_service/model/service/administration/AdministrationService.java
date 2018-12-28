@@ -3,8 +3,6 @@ package ir.app_service.model.service.administration;
 import ir.app_service.model.entity.*;
 import ir.app_service.model.entity.enumeration.AccountRole;
 import ir.app_service.model.repository.*;
-import ir.kk.app_service.model.entity.*;
-import ir.kk.app_service.model.repository.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
